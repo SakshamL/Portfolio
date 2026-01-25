@@ -1,0 +1,97 @@
+import React from "react";
+import { useState, useEffect, useRef } from "react";
+import { MdOutlineTerminal } from "react-icons/md";
+import { CgMenuBoxed } from "react-icons/cg";
+import { AiOutlineClose } from "react-icons/ai";
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      //   // Logic: If the menu is open AND the click target is NOT inside the menu
+      //   if (
+      //     isOpen &&
+      //     menuRef.current &&
+      //     !menuRef.current.contains(event.target)
+      //   ) {
+      //     setIsOpen(false);
+      //   }
+
+      // Logic: Only close if the click is OUTSIDE the menu AND OUTSIDE the navbar
+      const clickedOutsideMenu =
+        menuRef.current && !menuRef.current.contains(event.target);
+      const clickedOutsideNav =
+        navRef.current && !navRef.current.contains(event.target);
+
+      if (isOpen && clickedOutsideMenu && clickedOutsideNav) {
+        setIsOpen(false);
+      }
+    };
+
+    // Attach the listener to the document
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    // Clean up: Always remove listeners to prevent memory leaks!
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
+
+  const handleResMenuClick = () => {
+    setIsOpen(!isOpen);
+    const menu_list = document.getElementById("menu-list");
+  };
+
+  return (
+    <div
+      className="sticky flex justify-around items-center -mx-10 border-b border-b-card-border dark:border-b-[#e5e7eb21] top-0 z-50 glass-nav"
+      ref={navRef}
+    >
+      <div className="logo flex items-center text-xl font-semibold gap-2">
+        <MdOutlineTerminal className="text-3xl text-blue-500" />
+        <h3>Saksham Luthra</h3>
+      </div>
+      {isOpen ? (
+        <AiOutlineClose
+          className="text-3xl text-primary my-5 right-0 cursor-pointer sm:hidden"
+          onClick={handleResMenuClick}
+        />
+      ) : (
+        <CgMenuBoxed
+          className="text-3xl text-primary my-5 right-0 cursor-pointer sm:hidden"
+          onClick={handleResMenuClick}
+        />
+      )}
+      <div
+        id="menu-list"
+        ref={menuRef}
+        className={`font-semibold flex fixed responsive-nav h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-0 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"} border-card-border border `}
+      >
+        <h3
+          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          onClick={handleResMenuClick}
+        >
+          About
+        </h3>
+        <h3
+          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          onClick={handleResMenuClick}
+        >
+          Projects
+        </h3>
+        <h3
+          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          onClick={handleResMenuClick}
+        >
+          Skills
+        </h3>
+        <button>Contact Me</button>
+      </div>
+    </div>
+  );
+};
+
+export default Navigation;
