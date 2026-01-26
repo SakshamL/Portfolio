@@ -89,7 +89,10 @@ const Navigation = () => {
         >
           Skills
         </h3>
-        <button className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6  bg-primary hover:scale-105 rounded-lg cursor-pointer transition-all duration-200 ease-in-out hover:bg-blue-600 text-white font-semibold leading-normal tracking-[0.030em] shadow-[0_0_15px_rgba(43,140,238,0.3)] transform-gpu backface-hidden will-change-transform">
+        <button
+          className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6 hover:scale-105  primary_button"
+          onClick={handleResMenuClick}
+        >
           Contact Me
         </button>
       </div>
