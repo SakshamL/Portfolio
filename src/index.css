@@ -39,6 +39,14 @@
     -webkit-backdrop-filter: blur(12px);
   }
 
+  .sm-navbar {
+    @apply sm:px-10 sm:justify-between sm:mx-0 lg:pl-40 lg:pr-45 md:px-20;
+  }
+
+  .sm-menu-list {
+    @apply sm:static sm:h-auto sm:w-auto sm:flex-row sm:translate-x-0 sm:py-0 sm:border-none sm:bg-transparent;
+  }
+
   /* Custom scrollbar logic remains similar */
   ::-webkit-scrollbar {
     width: 8px;

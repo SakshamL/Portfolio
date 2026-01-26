@@ -47,10 +47,10 @@ const Navigation = () => {
 
   return (
     <div
-      className="sticky flex justify-around items-center -mx-10 border-b border-b-card-border dark:border-b-[#e5e7eb21] top-0 z-50 glass-nav"
+      className="sticky flex h-18 justify-around items-center -mx-10 border-b border-b-card-border dark:border-b-[#e5e7eb21] top-0 z-50 glass-nav transition-all duration-200 ease-in-out sm-navbar"
       ref={navRef}
     >
-      <div className="logo flex items-center text-xl font-semibold gap-2">
+      <div className="logo flex items-center text-xl font-semibold gap-2 ">
         <MdOutlineTerminal className="text-3xl text-blue-500" />
         <h3>Saksham Luthra</h3>
       </div>
@@ -68,27 +68,30 @@ const Navigation = () => {
       <div
         id="menu-list"
         ref={menuRef}
-        className={`font-semibold flex fixed responsive-nav h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-0 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"} border-card-border border `}
+        className={`text-sm font-semibold font-display flex fixed ${isOpen ? "responsive-nav" : "sm:bg-transparent"} h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-0  sm:transition-none sm:translate-x-0 ease-in-out  sm-menu-list ${isOpen ? "translate-x-0 transition-transform duration-200" : "translate-x-full"} border-card-border border `}
       >
         <h3
-          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent 
+          "
           onClick={handleResMenuClick}
         >
           About
         </h3>
         <h3
-          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
           onClick={handleResMenuClick}
         >
           Projects
         </h3>
         <h3
-          className="w-full text-center py-4 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-dark"
+          className="w-full px-4  sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
           onClick={handleResMenuClick}
         >
           Skills
         </h3>
-        <button>Contact Me</button>
+        <button className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6  bg-primary hover:scale-105 rounded-lg cursor-pointer transition-all duration-200 ease-in-out hover:bg-blue-600 text-white font-semibold leading-normal tracking-[0.030em] shadow-[0_0_15px_rgba(43,140,238,0.3)] transform-gpu backface-hidden will-change-transform">
+          Contact Me
+        </button>
       </div>
     </div>
   );
