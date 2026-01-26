@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { MdOutlineTerminal } from "react-icons/md";
 import { CgMenuBoxed } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,15 +46,27 @@ const Navigation = () => {
     const menu_list = document.getElementById("menu-list");
   };
 
+  const scrollToTopLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // This creates the gliding animation
+    });
+
+    // Optional: Close the mobile menu if it's open when clicking logo
+    if (isOpen) setIsOpen(false);
+  };
+
   return (
     <div
       className="sticky flex h-18 justify-around items-center -mx-10 border-b border-b-card-border dark:border-b-[#e5e7eb21] top-0 z-50 glass-nav transition-all duration-200 ease-in-out sm-navbar"
       ref={navRef}
     >
-      <div className="logo flex items-center text-xl font-semibold gap-2 ">
-        <MdOutlineTerminal className="text-3xl text-blue-500" />
-        <h3>Saksham Luthra</h3>
-      </div>
+      <Link to={"/"} onClick={scrollToTopLogoClick}>
+        <div className="logo flex items-center text-xl font-semibold gap-2 ">
+          <MdOutlineTerminal className="text-3xl text-blue-500" />
+          <h3>Saksham Luthra</h3>
+        </div>
+      </Link>
       {isOpen ? (
         <AiOutlineClose
           className="text-3xl text-primary my-5 right-0 cursor-pointer sm:hidden"
@@ -70,25 +83,27 @@ const Navigation = () => {
         ref={menuRef}
         className={`text-sm font-semibold font-display flex fixed ${isOpen ? "responsive-nav" : "sm:bg-transparent"} h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-8  sm:transition-none sm:translate-x-0 ease-in-out  sm-menu-list ${isOpen ? "translate-x-0 transition-transform duration-200" : "translate-x-full"} border-card-border border `}
       >
-        <h3
+        <Link
+          to={"/"}
+          onClick={scrollToTopLogoClick}
           className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent 
           "
-          onClick={handleResMenuClick}
         >
-          About
-        </h3>
+          <h3 onClick={handleResMenuClick}>About</h3>
+        </Link>
         <h3
           className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
           onClick={handleResMenuClick}
         >
           Projects
         </h3>
-        <h3
+        <a
+          href="#skills"
           className="w-full px-4  sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
           onClick={handleResMenuClick}
         >
-          Skills
-        </h3>
+          <h3>Skills</h3>
+        </a>
         <button
           className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6 hover:scale-105  primary_button"
           onClick={handleResMenuClick}
