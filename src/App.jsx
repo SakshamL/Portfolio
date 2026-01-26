@@ -14,9 +14,6 @@ function App() {
       <div>
         <Navigation />
         <Hero />
-        <Hero />
-        <Hero />
-        <Hero />
       </div>
     </>
   );
