@@ -68,7 +68,7 @@ const Navigation = () => {
       <div
         id="menu-list"
         ref={menuRef}
-        className={`text-sm font-semibold font-display flex fixed ${isOpen ? "responsive-nav" : "sm:bg-transparent"} h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-0  sm:transition-none sm:translate-x-0 ease-in-out  sm-menu-list ${isOpen ? "translate-x-0 transition-transform duration-200" : "translate-x-full"} border-card-border border `}
+        className={`text-sm font-semibold font-display flex fixed ${isOpen ? "responsive-nav" : "sm:bg-transparent"} h-dvh w-[40%] flex-col items-center py-10 top-17.75 right-8  sm:transition-none sm:translate-x-0 ease-in-out  sm-menu-list ${isOpen ? "translate-x-0 transition-transform duration-200" : "translate-x-full"} border-card-border border `}
       >
         <h3
           className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent 
