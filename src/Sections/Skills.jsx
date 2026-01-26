@@ -38,18 +38,13 @@ const Skills = () => {
       id="skills"
       className=" bg-[#02061767] w-full flex flex-col justify-center items-center py-10  mb-20 scroll-mt-20"
     >
-      <div className="w-[90%] text-2xl font-semibold flex gap-4 items-center justify-start">
+      <div className="w-[90%] md:w-[70%] text-2xl font-semibold flex gap-4 items-center justify-start">
         <div className="flex-2.5">My Arsenal</div>
         <div className="flex-5 w-full">
-          <div
-            className="w-full h-px bg-linear-to-r
-from-slate-500
-via-slate-600
-to-transparent"
-          />
+          <div className="w-full h-px bg-linear-to-r from-slate-500 via-slate-600 to-transparent" />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 w-[90%] mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 w-[90%] md:w-[70%] mt-10">
         <SkillCard icon={<FaReact />} name="React" color="primary" />
         <SkillCard icon={<MdJavascript />} name="Javascript" color="yellow" />
         <SkillCard icon={<MdHtml />} name="HTML5" color="orange" />
