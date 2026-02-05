@@ -6,7 +6,7 @@ import { FaDownload } from "react-icons/fa6";
 const Hero = () => {
   return (
     <>
-      <div id="hero" className="h-150 w-full bg-[#020617] relative bg-">
+      <div id="hero" className="h-150 w-full bg-[#020617] relative">
         <div
           className="absolute inset-0 z-0"
           style={{
