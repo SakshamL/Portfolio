@@ -36,7 +36,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className=" bg-[#02061767] w-full flex flex-col justify-center items-center py-10  mb-20 scroll-mt-20"
+      className=" bg-[#02061767] w-full flex flex-col justify-center items-center py-10 pb-20 scroll-mt-30"
     >
       <div className="w-[90%] md:w-[70%] text-2xl font-semibold flex gap-4 items-center justify-start">
         <div className="flex-2.5">My Arsenal</div>

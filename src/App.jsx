@@ -6,6 +6,7 @@ import Navigation from "./Sections/Navigation";
 import { Route, Routes } from "react-router-dom";
 import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
+import Projects from "./Sections/Projects";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
         <Navigation />
         <Hero />
         <Skills />
+        <Projects />
       </div>
     </>
   );

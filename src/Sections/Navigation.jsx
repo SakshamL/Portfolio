@@ -91,12 +91,6 @@ const Navigation = () => {
         >
           <h3 onClick={handleResMenuClick}>About</h3>
         </Link>
-        <h3
-          className="w-full px-4 sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
-          onClick={handleResMenuClick}
-        >
-          Projects
-        </h3>
         <a
           href="#skills"
           className="w-full px-4  sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
@@ -104,6 +98,14 @@ const Navigation = () => {
         >
           <h3>Skills</h3>
         </a>
+        <a
+          href="#projects"
+          className="w-full px-4  sm:w-fit text-center py-5 cursor-pointer transition-all duration-200 ease-in-out hover:bg-card-border hover:text-primary sm:hover:bg-transparent"
+          onClick={handleResMenuClick}
+        >
+          <h3>Projects</h3>
+        </a>
+
         <button
           className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6 hover:scale-105  primary_button"
           onClick={handleResMenuClick}
