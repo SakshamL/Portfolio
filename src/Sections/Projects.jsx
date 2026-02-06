@@ -55,7 +55,7 @@ const Projects = () => {
   return (
     <div id="projects" className="bg-[#020617] scroll-mt-20">
       <div
-        className="w-full flex flex-col justify-center items-center py-10  mb-15"
+        className="w-full flex flex-col justify-center items-center py-10  pb-20"
         style={{
           backgroundImage: `radial-gradient(circle 400px at 50% 500px, rgba(16, 25, 40, 1), transparent)`,
         }}
@@ -73,13 +73,6 @@ const Projects = () => {
             desc="Created a movie database and streaming web app using TMDB API, featuring lists of Movies and TV Shows with dynamic loading and routing."
             tech={["React JS", "Tailwind CSS", "TMDB API"]}
             livelink="https://watchall-kappa.vercel.app"
-          />
-          <ProjectCard
-            image="/portfolio-pic.PNG"
-            title="Portfolio - Saksham Luthra"
-            desc="This beautiful and fully responsive portfolio app you are currently accessing is developed using the latest in demand web technologies like React and Tailwind CSS."
-            tech={["React JS", "Tailwind CSS"]}
-            livelink="/"
           />
           <ProjectCard
             image="/portfolio-pic.PNG"
