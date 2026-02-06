@@ -10,7 +10,7 @@ const Projects = () => {
           <div className="overflow-hidden rounded-tr-xl rounded-tl-xl border-b border-card-border flex justify-center">
             <img
               src={image || "/no-poster.jpg"}
-              alt="text"
+              alt={title}
               className="w-full h-50 rounded-tr-xl rounded-tl-xl scale-[1] group-hover:scale-[1.06] transition-all duration-200 ease-in-out "
             />
           </div>
@@ -60,19 +60,26 @@ const Projects = () => {
           backgroundImage: `radial-gradient(circle 400px at 50% 500px, rgba(16, 25, 40, 1), transparent)`,
         }}
       >
-        <div className="w-[90%] md:w-[70%] text-2xl font-semibold flex items-center justify-start">
+        <div className="w-[90%] md:w-[70%] text-2xl font-semibold flex items-center justify-center">
           <div>Featured Projects</div>
         </div>
-        <div className="w-[90%] md:w-[70%] font-normal flex items-center justify-start mt-2 text-[grey]">
+        <div className="w-[90%] md:w-[70%] font-normal flex items-center justify-center mt-2 text-[grey]">
           <h2 className="mb-10">A selection of my recent work</h2>
         </div>
-        <div className="flex flex-col gap-8 sm:flex-wrap items-center sm:flex-row sm:justify-center sm:items-start w-[90%] lg:w-[70%]">
+        <div className="flex flex-col gap-8 sm:flex-wrap items-center sm:flex-row sm:justify-center sm:items-start w-[90%] ">
           <ProjectCard
             image="/watchall-pic.PNG"
             title="WatchAll Media - Movies and TV Shows"
             desc="Created a movie database and streaming web app using TMDB API, featuring lists of Movies and TV Shows with dynamic loading and routing."
             tech={["React JS", "Tailwind CSS", "TMDB API"]}
             livelink="https://watchall-kappa.vercel.app"
+          />
+          <ProjectCard
+            image="/portfolio-pic.PNG"
+            title="Portfolio - Saksham Luthra"
+            desc="This beautiful and fully responsive portfolio app you are currently accessing is developed using the latest in demand web technologies like React and Tailwind CSS."
+            tech={["React JS", "Tailwind CSS"]}
+            livelink="/"
           />
           <ProjectCard
             image="/portfolio-pic.PNG"
