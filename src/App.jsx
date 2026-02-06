@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import Projects from "./Sections/Projects";
+import Contact from "./Sections/Contact";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
+        <Contact />
       </div>
     </>
   );
