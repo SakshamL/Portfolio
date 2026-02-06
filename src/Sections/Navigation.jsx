@@ -46,6 +46,14 @@ const Navigation = () => {
     const menu_list = document.getElementById("menu-list");
   };
 
+  const handleContactClick = () => {
+    setIsOpen(false);
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView();
+    }
+  };
+
   const scrollToTopLogoClick = () => {
     window.scrollTo({
       top: 0,
@@ -108,7 +116,7 @@ const Navigation = () => {
 
         <button
           className=" h-10 mt-8 sm:mt-0 px-4 sm:w-fit text-sm sm:ml-5 sm:-mr-5 sm:px-5 lg:px-6 hover:scale-105  primary_button"
-          onClick={handleResMenuClick}
+          onClick={handleContactClick}
         >
           Contact Me
         </button>
