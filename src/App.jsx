@@ -8,6 +8,7 @@ import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import Projects from "./Sections/Projects";
 import Contact from "./Sections/Contact";
+import Footer from "./Sections/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
       </div>
     </>
   );
